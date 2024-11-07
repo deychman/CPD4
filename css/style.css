@@ -1,0 +1,354 @@
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+body {
+    text-align: center;
+}
+
+main {
+    display:block;
+    unicode-bidi: isolate;
+}
+
+/* Initially hide the skip link */
+.skip-link {
+    position: absolute;
+    top: -40px; /* Adjust based on your design */
+    left: 0;
+    background: white;
+    color: rgb(19, 3, 252);
+    padding: 8px;
+    z-index: 100;  /* Ensure it is above other elements */
+    text-decoration: underline;
+}
+
+/* Make the skip link visible when focused */
+.skip-link:focus {
+    top: 0;
+    left: 0;
+}
+
+/* Nav bar styling */
+nav {
+    background-color: rgb(147, 144, 157); 
+    border-bottom: #02024b solid 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;  
+    width: 100%; 
+    margin-top: 0;
+    overflow:hidden;
+    
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+nav ul {
+    overflow-x: auto; /* Horizontal overflow for scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+}
+
+nav ul::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-top: 0px;
+    unicode-bidi: isolate;
+}
+
+nav li {
+    margin: auto;
+    list-style: none;
+    padding: 20px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+    color: darkblue ;
+
+}
+
+nav li:hover {
+    background-color: #575757;
+}
+
+nav ul li a:hover,
+nav ul li details summary:hover {
+    background-color: white; 
+}
+
+nav ul li details {
+    position: relative;
+    z-index: 1;  
+}
+
+
+/* Styling for the h1 element */
+h1 {
+    font-size: x-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 2px gray, 2px 2px 4px lightgray;
+    margin: 20px 0; /* Make the h1 below the nav bar */
+    text-align: center; 
+    animation: fadeIn 2s ease-in-out; /* Apply fade-in animation to tables */
+}
+
+/* Styling for the h2 element  */
+h2 {
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* Apply fade-in animation to tables */
+}
+
+img {
+    display: block;
+    margin: 0 auto; 
+    border-radius: 20%;
+    border: 5px solid blue;
+    margin-bottom: 5px;
+    
+}
+
+
+
+#athlete-sr-table, #athlete-result-table {
+    display: table;
+    border-collapse: separate;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#athlete-sr-table th, #athlete-sr-table td,
+#athlete-result-table th, #athlete-result-table td {
+    padding: 5px; 
+    border: 2px solid rgb(98, 98, 106); 
+    text-align: center; 
+    
+}
+
+#athlete-result-table td a {
+    color: #322c66; /* Dark grey color for links to pass color contrast validator*/
+    text-decoration: underline;
+}
+
+
+#athlete-sr-table tr:nth-child(odd),
+#athlete-result-table tr:nth-child(odd) {   
+    background-color: #f2f2f2;             /*Make the table striped*/
+}
+
+#athlete-sr-table th, tr:hover,
+#athlete-result-table th, tr:hover {   
+    background-color: burlywood;     /*Ensure the hover state is highlighted and emphasizes content*/
+    font-weight: bold;
+    font-size: larger; 
+}
+
+#athlete-sr-table tr:nth-child(odd):hover,
+#athlete-result-table tr:nth-child(odd):hover {
+    background-color: burlywood;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#athlete-sr-table th, #athlete-result-table th {
+    background-color: rgba(72, 72, 130, 0.737);
+}
+
+footer {
+    padding: 20px 40px; /* Add padding around the footer */
+    font-size: 1.2rem;
+    font-style: italic; /* Make the text italic */
+    border-top: solid darkblue 5px;
+    cursor: wait;
+}
+
+footer p, footer address {
+    margin-bottom: 10px; /* Add bottom margin to space out the lines */
+}
+
+footer address {
+    display: block; /* Ensure the address block occupies its own line */
+}
+
+footer a {
+    font-size: 1.2rem; 
+    font-style: italic; 
+    text-decoration: underline;
+}
+
+
+/* .dark-mode-label{
+    border: 1px solid black;
+    width: auto;
+    display: inline;
+    color: white;
+    background-color: #121212;
+    text-decoration: underline;
+} */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    h1, h2 {
+        animation: none;
+        transition: none;
+        scroll-behavior: auto;
+    }
+
+    footer{
+        cursor:crosshair
+    }
+}
+
+
+
+@media screen and (min-width: 500px) {
+    table{
+        grid-template-columns: repeat(1fr, 4);
+    }
+    #athlete-result-table{
+        width: 80%;
+    }
+    #athlete-sr-table th,
+    #athlete-result-table th{ 
+        background-color:rgba(93, 93, 250, 0.356) ;
+        border: solid 4px darkgreen;  
+        font-weight: bold;
+    }
+    #athlete-sr-table td,
+    #athlete-result-table td {
+        border: solid 2px black
+    }
+
+    h1{
+        font-size:larger;
+    }
+   
+
+}
+
+
+@media screen and (min-width: 801px) {
+    table{
+        grid-template-columns: repeat(1fr, 4);
+        border-color:black;
+    }
+    #athlete-result-table{
+        width: 90%;
+        margin:auto;
+        padding-inline-start: 5%;
+    }
+
+    /* #athlete-sr-table{
+        width:120%;
+        margin: auto;
+        text-align: center;
+    } */
+
+    img{
+        border-color:black;
+        width:230px;
+        height:255px;
+    }
+    body{
+        background-color:lightgray;
+    }
+
+    #athlete-sr-table th,
+    #athlete-result-table th{ 
+        background-color:rgba(30, 30, 255, 0.884) ;
+        border: solid 3px rgb(35, 66, 41);  
+        font-weight: bold;
+    }
+    
+    #athlete-sr-table td,
+    #athlete-result-table td {
+        border: solid 2px black
+    }
+
+    h1{
+        font-size:xxx-large;
+        text-shadow: 2px 2px 4px rgb(79, 79, 79); 
+    }
+   
+}
+
+@media (prefers-color-scheme:dark) {
+    /* Define light mode variables */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --header-background-color: #f2f2f2;
+    --link-color: blue;
+    --table-header-color: #f2f2f2;
+    --table-border-color: #000;
+    --table-hover-color: burlywood;
+}
+
+/* Define dark mode variables */
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background-color: #333;
+    --link-color: lightblue;
+    --table-header-color: #444;
+    --table-border-color: #bbb;
+    --table-hover-color: #555;
+}
+
+/*Additional dark mode variables to pass the color contrast validator*/
+[data-theme="dark"] #athlete-result-table tbody tr:nth-child(even) td:first-child a {
+    color: gray;
+}
+[data-theme="dark"] #athlete-result-table tbody tr:nth-child(odd) td:first-child a {
+    color: rgb(13, 4, 144);
+}
+[data-theme="dark"] tbody tr:nth-child(odd) {
+    color: black;
+}
+[data-theme="dark"] nav li{
+    color: black;
+}
+[data-theme="dark"] img{
+    border-color: white;
+}
+[data-theme="dark"] .skip-link{
+    color: rgb(136, 136, 225);
+    text-decoration: underline;
+}
+}
+
