@@ -1,0 +1,175 @@
+body {
+    
+    justify-content: center;
+    background-color: rgb(202, 202, 202);
+}
+
+/* Initially hide the skip link */
+.skip-link {
+    position: absolute;
+    top: -40px; /* Adjust based on your design */
+    left: 0;
+    background: white;
+    color: rgb(19, 3, 252);
+    padding: 8px;
+    z-index: 100;  /* Ensure it is above other elements */
+    text-decoration: underline;
+}
+
+/* Make the skip link visible when focused */
+.skip-link:focus {
+    top: 0;
+    left: 0;
+}
+
+
+/* Styling for the h1 element */
+h1 {
+    font-size: x-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 2px gray, 2px 2px 4px lightgray;
+    margin: 20px 0; /* Make the h1 lower */
+    text-align: center; 
+    animation: fadeIn 2s ease-in-out; /* Apply fade-in animation */
+    border: solid 2px black
+}
+
+main{
+    text-align: center;                    /* Make all content (the list and p) centered*/
+    display: block;
+}
+
+#top{
+    font-weight: bold;
+    font-size: larger;
+    padding-bottom: 50px;
+    margin: 5px;
+    text-decoration: underline;
+    color: blue;
+}
+
+ul {
+    padding-bottom: 10px;
+    justify-items: center;
+}
+
+ul li{
+    padding-bottom: 5px;
+}
+
+li{
+    color: rgb(1, 1, 120) ;
+    text-decoration: underline;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    border-left: solid 2px white;
+    border-radius: 20%;
+    border-right: solid 2px white;
+}
+
+footer {
+    padding: 20px 40px; /* Add padding around the footer */
+    font-size: 1.2rem;
+    font-style: italic; /* Make the text italic */
+    border-top: solid darkblue 5px;
+}
+
+footer p, footer address {
+    margin-bottom: 10px; /* Add bottom margin to space out the lines */
+}
+
+footer address {
+    display: block; /* Ensure the address block occupies its own line */
+}
+
+footer a {
+    font-size: 1.2rem; 
+    font-style: italic; 
+    text-decoration: underline;
+}
+
+
+.dark-mode-label{
+    border: 1px solid black;
+    color: white;
+    background-color: #121212;
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none;
+        transition: none;
+        scroll-behavior: auto;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Create 3 equal-width columns */
+        gap: 5px; /* Add space between grid items */
+        list-style-type: none; 
+        padding: 0 0 10px 0;
+    }
+    footer{
+        text-align:center;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    h1{
+        text-shadow: 20%;
+        font-size: xx-large;
+    }
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
+        column-width: 20px;
+        gap: 10px; /* Add space between grid items */
+        list-style-type: none; 
+        padding: 0 0 10px 0;
+    }
+    ul li{
+        border: solid 3px white;
+        border-radius: 10%;
+        background-color:rgb(54, 176, 252);
+        color:white;
+        font-weight: bold;
+    }
+    footer{
+        text-align:center;
+    }
+}
+
+
+/* Define light mode variables */
+/* :root {
+    --background-color: white;
+    --text-color: black;
+    --header-background-color: #f2f2f2;
+    --link-color: blue;
+    --table-header-color: #f2f2f2;
+    --table-border-color: #000;
+    --table-hover-color: burlywood;
+} */
+
+/* Define dark mode variables */
+/* [data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background-color: #333;
+    --link-color: lightblue;
+    --table-header-color: #444;
+    --table-border-color: #bbb;
+    --table-hover-color: #555;
+} */
